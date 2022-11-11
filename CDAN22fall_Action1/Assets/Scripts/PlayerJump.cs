@@ -16,11 +16,12 @@ public class PlayerJump : MonoBehaviour {
       //public AudioSource JumpSFX;
 
       void Start(){
-            //anim = gameObject.GetComponentInChildren<Animator>();
+            //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
             rb = GetComponent<Rigidbody2D>();
       }
 
      void Update() {
+            //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
             if ((IsGrounded()) || (jumpTimes <= 1)){
                   canJump = true;
             }  else if (jumpTimes > 1){

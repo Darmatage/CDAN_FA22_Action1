@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour {
 
+      public static string currentBeast = "bear";
       private GameObject player;
       public static int playerHealth = 100;
       public int StartPlayerHealth = 100;

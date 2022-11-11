@@ -14,23 +14,24 @@ public class PlayerMove : MonoBehaviour {
       private Vector3 hMove;
 
       void Start(){
-           //animator = gameObject.GetComponentInChildren<Animator>();
+           //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
            rb2D = transform.GetComponent<Rigidbody2D>();
       }
 
       void Update(){
-            //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
+           //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
+           //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
            hMove = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
            if (isAlive == true){
                   transform.position = transform.position + hMove * runSpeed * Time.deltaTime;
 
                   if (Input.GetAxis("Horizontal") != 0){
-                  //       animator.SetBool ("Walk", true);
+                  //       animator.SetBool ("walk", true);
                   //       if (!WalkSFX.isPlaying){
                   //             WalkSFX.Play();
                   //      }
                   } else {
-                  //      animator.SetBool ("Walk", false);
+                  //      animator.SetBool ("walk", false);
                   //      WalkSFX.Stop();
                   }
 
@@ -57,4 +58,7 @@ public class PlayerMove : MonoBehaviour {
             theScale.x *= -1;
             transform.localScale = theScale;
       }
+
+
+
 }
