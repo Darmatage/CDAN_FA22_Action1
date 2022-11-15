@@ -22,8 +22,9 @@ public class PlayerJump : MonoBehaviour {
 
      void Update() {
             //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
+            if (GameHandler.currentBeast=="bear"){
             if ((IsGrounded()) || (jumpTimes <= 1)){
-                  canJump = true;
+                  canJump = false;
             }  else if (jumpTimes > 1){
                   canJump = false;
             }
@@ -32,6 +33,29 @@ public class PlayerJump : MonoBehaviour {
                   Jump();
             }
       }
+      if (GameHandler.currentBeast=="badger"){
+      if ((IsGrounded()) || (jumpTimes <= 1)){
+            canJump = true;
+      }  else if (jumpTimes > 1){
+            canJump = false;
+      }
+
+     if ((Input.GetButtonDown("Jump")) && (canJump) && (isAlive == true)) {
+            Jump();
+      }
+}
+if (GameHandler.currentBeast=="pigeon"){
+if ((IsGrounded()) || (jumpTimes <= 1)){
+      canJump = true;
+}  else if (jumpTimes > 1){
+      canJump = true;
+}
+
+if ((Input.GetButtonDown("Jump")) && (canJump) && (isAlive == true)) {
+      Jump();
+}
+}
+    }
 
       public void Jump() {
             jumpTimes += 1;
