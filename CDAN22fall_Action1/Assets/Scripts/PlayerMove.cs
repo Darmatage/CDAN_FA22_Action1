@@ -7,7 +7,9 @@ public class PlayerMove : MonoBehaviour {
       //public Animator animator;
       public Rigidbody2D rb2D;
       private bool FaceRight = true; // determine which way player is facing.
-      public static float runSpeed = 10f;
+      public static float runSpeed1 = 10f;
+      public static float runSpeed2 = 13f;
+      public static float runSpeed3 = 5f;
       public float startSpeed = 10f;
       public bool isAlive = true;
       //public AudioSource WalkSFX;
@@ -23,7 +25,8 @@ public class PlayerMove : MonoBehaviour {
            //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
            hMove = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
            if (isAlive == true){
-                  transform.position = transform.position + hMove * runSpeed * Time.deltaTime;
+             if (GameHandler.currentBeast=="bear"){
+                  transform.position = transform.position + hMove * runSpeed1 * Time.deltaTime;
 
                   if (Input.GetAxis("Horizontal") != 0){
                   //       animator.SetBool ("walk", true);
@@ -40,6 +43,47 @@ public class PlayerMove : MonoBehaviour {
                         playerTurn();
                   }
            }
+         }
+         if (isAlive == true){
+           if (GameHandler.currentBeast=="badger"){
+                transform.position = transform.position + hMove * runSpeed2 * Time.deltaTime;
+
+                if (Input.GetAxis("Horizontal") != 0){
+                //       animator.SetBool ("walk", true);
+                //       if (!WalkSFX.isPlaying){
+                //             WalkSFX.Play();
+                //      }
+                } else {
+                //      animator.SetBool ("walk", false);
+                //      WalkSFX.Stop();
+                }
+
+                // Turning: Reverse if input is moving the Player right and Player faces left
+               if ((hMove.x <0 && !FaceRight) || (hMove.x >0 && FaceRight)){
+                      playerTurn();
+                }
+         }
+       }
+       if (isAlive == true){
+         if (GameHandler.currentBeast=="pigeon"){
+              transform.position = transform.position + hMove * runSpeed3 * Time.deltaTime;
+
+              if (Input.GetAxis("Horizontal") != 0){
+              //       animator.SetBool ("walk", true);
+              //       if (!WalkSFX.isPlaying){
+              //             WalkSFX.Play();
+              //      }
+              } else {
+              //      animator.SetBool ("walk", false);
+              //      WalkSFX.Stop();
+              }
+
+              // Turning: Reverse if input is moving the Player right and Player faces left
+             if ((hMove.x <0 && !FaceRight) || (hMove.x >0 && FaceRight)){
+                    playerTurn();
+              }
+       }
+     }
       }
 
       void FixedUpdate(){
