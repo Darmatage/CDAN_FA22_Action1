@@ -19,7 +19,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       void Update(){
            if (Time.time >= nextAttackTime){
                   //if (Input.GetKeyDown(KeyCode.Space))
-                 if (Input.GetAxis("Attack") > 0){
+                 if ((Input.GetAxis("Attack") > 0)&&(GameHandler.currentBeast == "bear")){
                         Attack();
                         nextAttackTime = Time.time + 1f / attackRate;
 						//Debug.Log("I pressed Attack"));
