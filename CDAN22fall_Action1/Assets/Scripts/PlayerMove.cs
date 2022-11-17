@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour {
 
       //public Animator animator;
       public Rigidbody2D rb2D;
-      private bool FaceRight = true; // determine which way player is facing.
+      private bool FaceRight = false; // determine which way player is facing.
       public static float runSpeed1 = 10f;
       public static float runSpeed2 = 13f;
       public static float runSpeed3 = 5f;
