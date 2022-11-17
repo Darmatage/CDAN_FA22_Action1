@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMoveHit : MonoBehaviour {
 
-       public Animator anim;
+       //public Animator anim;
        public Rigidbody2D rb2D;
        public float speed = 4f;
        private Transform target;
@@ -18,7 +18,7 @@ public class EnemyMoveHit : MonoBehaviour {
        private float scaleX;
 
        void Start () {
-              anim = GetComponentInChildren<Animator> ();
+              //anim = GetComponentInChildren<Animator> ();
               rb2D = GetComponentInChildren<Rigidbody2D> ();
               scaleX = gameObject.transform.localScale.x;
 
