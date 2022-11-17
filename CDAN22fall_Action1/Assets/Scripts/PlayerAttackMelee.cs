@@ -22,7 +22,7 @@ public class PlayerAttackMelee : MonoBehaviour{
                  if (Input.GetAxis("Attack") > 0){
                         Attack();
                         nextAttackTime = Time.time + 1f / attackRate;
-						Debug.Log("I pressed Attack"))
+						//Debug.Log("I pressed Attack"));
                   }
             }
       }
