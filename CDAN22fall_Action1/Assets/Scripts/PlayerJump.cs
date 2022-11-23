@@ -4,77 +4,109 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour {
 
-      //public Animator anim;
-      public Rigidbody2D rb;
-      public float jumpForce = 20f;
-      public Transform feet;
-      public LayerMask groundLayer;
-      public LayerMask enemyLayer;
-      public bool canJump = false;
-      public int jumpTimes = 0;
-      public bool isAlive = true;
-      //public AudioSource JumpSFX;
+    //public Animator anim;
+    public Rigidbody2D rb;
+    public float jumpForce = 20f;
+    public Transform feet;
+    public LayerMask groundLayer;
+    public LayerMask enemyLayer;
+    public bool canJump = false;
+    public int jumpTimes = 0;
+    public bool isAlive = true;
+    //public AudioSource JumpSFX;
+	public float feetRange = 1f;
 
-      void Start(){
+	bool isBird = false;
+	bool canFly = false;
+	public float groundPos = 0;
+
+
+    void Start(){
             //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
             rb = GetComponent<Rigidbody2D>();
-      }
-
-     void Update() {
-            //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
-            if (GameHandler.currentBeast=="bear"){
-            if ((IsGrounded()) || (jumpTimes <= 1)){
-                  canJump = false;
-            }  else if (jumpTimes > 1){
-                  canJump = false;
-            }
-
-           if ((Input.GetButtonDown("Jump")) && (canJump) && (isAlive == true)) {
-                  Jump();
-            }
-      }
-      if (GameHandler.currentBeast=="badger"){
-      if ((IsGrounded()) || (jumpTimes <= 1)){
-            canJump = true;
-      }  else if (jumpTimes > 1){
-            canJump = false;
-      }
-
-     if ((Input.GetButtonDown("Jump")) && (canJump) && (isAlive == true)) {
-            Jump();
-      }
-}
-if (GameHandler.currentBeast=="pigeon"){
-if ((IsGrounded()) || (jumpTimes <= 1)){
-      canJump = true;
-}  else if (jumpTimes > 1){
-      canJump = true;
-}
-
-if ((Input.GetButtonDown("Jump")) && (canJump) && (isAlive == true)) {
-      Jump();
-}
-}
     }
 
-      public void Jump() {
-            jumpTimes += 1;
-            rb.velocity = Vector2.up * jumpForce;
-            // anim.SetTrigger("Jump");
-            // JumpSFX.Play();
+    void Update() {
+        //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
+        if (GameHandler.currentBeast=="bear"){
+            canJump = false;
 
-            //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
-            //rb.velocity = movement;
-      }
+		}
+		if (GameHandler.currentBeast=="badger"){
+			//if ((IsGrounded()) || (jumpTimes <= 1)){
+			if (IsGrounded()){
+				canJump = true;
+			}
+			//else if (jumpTimes >= 1){
+			else {
+				canJump = false;
+			}
 
-      public bool IsGrounded() {
-            Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 2f, groundLayer);
-            Collider2D enemyCheck = Physics2D.OverlapCircle(feet.position, 2f, enemyLayer);
-            if ((groundCheck != null) || (enemyCheck != null)) {
-                  //Debug.Log("I am trouching ground!");
-                  jumpTimes = 0;
-                  return true;
-            }
-            return false;
-      }
+		}
+
+		if (GameHandler.currentBeast=="pigeon"){
+			//if ((IsGrounded()) || (jumpTimes <= 1)){
+			if (IsGrounded()){
+				canFly = true;
+			}  
+			else{
+				canJump = false;
+			}
+		}
+		
+		if ((Input.GetButtonDown("Jump")) && (canJump) && (isAlive == true)) {
+			Jump();
+		}
+		
+		if ((Input.GetButtonDown("Jump")) && (canFly) && (isAlive == true)) {
+			Fly();
+		}
+		
+		
+    }
+
+    public void Jump() {
+        jumpTimes += 1;
+        rb.velocity = Vector2.up * jumpForce;
+        // anim.SetTrigger("Jump");
+        // JumpSFX.Play();
+
+        //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
+        //rb.velocity = movement;
+    }
+
+	public void Fly(){
+		StartCoroutine(BirdDrop());
+		rb.velocity = Vector2.up * (jumpForce/2);
+		
+	}
+	
+	IEnumerator BirdDrop(){
+		rb.velocity = Vector2.up * (jumpForce/3);
+		yield return new WaitForSeconds(0.5f);
+		rb.velocity = Vector2.up * (jumpForce/4);
+		yield return new WaitForSeconds(0.5f);
+		rb.velocity = Vector2.up * (jumpForce/5);
+		yield return new WaitForSeconds(0.5f);
+		rb.velocity = Vector2.up * (jumpForce/5);
+		
+		yield return new WaitForSeconds(1f);
+		canFly = false;
+	}
+
+
+    public bool IsGrounded() {
+        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, feetRange, groundLayer);
+        Collider2D enemyCheck = Physics2D.OverlapCircle(feet.position, feetRange, enemyLayer);
+		if (groundCheck != null){
+			groundPos = feet.position.y;
+		}
+		if ((groundCheck != null) || (enemyCheck != null)) {
+            //Debug.Log("I am trouching ground!");
+            jumpTimes = 0;
+            return true;
+        }
+        return false;
+    }
+	
 }

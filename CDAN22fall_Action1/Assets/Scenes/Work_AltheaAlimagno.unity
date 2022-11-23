@@ -1790,6 +1790,10 @@ PrefabInstance:
       propertyPath: destructableTilemap
       value: 
       objectReference: {fileID: 480130430}
+    - target: {fileID: 8173267691315211359, guid: d55f9f7a7d7869042bbb7cc746a365bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.546
+      objectReference: {fileID: 0}
     - target: {fileID: 8173267691788476880, guid: d55f9f7a7d7869042bbb7cc746a365bb, type: 3}
       propertyPath: m_RootOrder
       value: 3
