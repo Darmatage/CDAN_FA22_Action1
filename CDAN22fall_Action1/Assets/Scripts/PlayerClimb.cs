@@ -37,8 +37,10 @@ public class PlayerClimb : MonoBehaviour {
 			else {
 				canClimb = false;
 			}
-
-		}
+		} else {canClimb = false;}
+		
+		
+		
     if ((Input.GetButtonDown("Jump")) && (canClimb) && (isAlive == true)) {
       Climb();
     }
