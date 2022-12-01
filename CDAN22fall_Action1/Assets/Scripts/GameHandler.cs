@@ -102,6 +102,8 @@ public class GameHandler : MonoBehaviour {
                   playerHealth = 0;
                   updateStatsDisplay();
                   playerDies();
+
+
             }
       }
 
