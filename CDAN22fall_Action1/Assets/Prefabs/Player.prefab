@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 8173267691788476883}
   - component: {fileID: 5886689708940690194}
   - component: {fileID: 4557781075889584545}
+  - component: {fileID: 4976544224460750698}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -557,6 +558,8 @@ MonoBehaviour:
   canJump: 0
   jumpTimes: 0
   isAlive: 1
+  feetRange: 1
+  groundPos: 0
 --- !u!114 &8173267691788476883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,6 +608,27 @@ MonoBehaviour:
   destructableTilemap: {fileID: 0}
   rangeDestroy: 1.2
   canExplode: 1
+--- !u!114 &4976544224460750698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8173267691788476893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27150111920e4d5ab46402ec5cace47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  climbForce: 7
+  feet: {fileID: 8173267691315211359}
+  climbLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  canClimb: 1
+  isAlive: 1
+  feetRange: 1
 --- !u!1 &8415843159333464212
 GameObject:
   m_ObjectHideFlags: 0

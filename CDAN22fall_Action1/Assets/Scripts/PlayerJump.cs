@@ -48,21 +48,21 @@ public class PlayerJump : MonoBehaviour {
 			//if ((IsGrounded()) || (jumpTimes <= 1)){
 			if (IsGrounded()){
 				canFly = true;
-			}  
+			}
 			else{
 				canJump = false;
 			}
 		}
-		
+
 		if ((Input.GetButtonDown("Jump")) && (canJump) && (isAlive == true)) {
 			Jump();
 		}
-		
+
 		if ((Input.GetButtonDown("Jump")) && (canFly) && (isAlive == true)) {
 			Fly();
 		}
-		
-		
+
+
     }
 
     public void Jump() {
@@ -78,9 +78,9 @@ public class PlayerJump : MonoBehaviour {
 	public void Fly(){
 		StartCoroutine(BirdDrop());
 		rb.velocity = Vector2.up * (jumpForce/2);
-		
+
 	}
-	
+
 	IEnumerator BirdDrop(){
 		rb.velocity = Vector2.up * (jumpForce/3);
 		yield return new WaitForSeconds(0.5f);
@@ -89,7 +89,7 @@ public class PlayerJump : MonoBehaviour {
 		rb.velocity = Vector2.up * (jumpForce/5);
 		yield return new WaitForSeconds(0.5f);
 		rb.velocity = Vector2.up * (jumpForce/5);
-		
+
 		yield return new WaitForSeconds(1f);
 		canFly = false;
 	}
@@ -108,5 +108,5 @@ public class PlayerJump : MonoBehaviour {
         }
         return false;
     }
-	
+
 }
