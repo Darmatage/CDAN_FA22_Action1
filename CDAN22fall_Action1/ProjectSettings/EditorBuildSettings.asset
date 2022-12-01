@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Work_ConnorPahl2.unity
     guid: 366d1f2f413224d83879e78caf34f859
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 59e0cffaa42be414a9ef84d035b89d6a
   m_configObjects: {}
