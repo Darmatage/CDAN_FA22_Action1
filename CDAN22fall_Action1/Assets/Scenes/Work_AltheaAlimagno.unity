@@ -2446,7 +2446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameHandlerObj: {fileID: 106873896}
-  damage: 5
+  damage: 200
 --- !u!61 &1649175915
 BoxCollider2D:
   m_ObjectHideFlags: 0
