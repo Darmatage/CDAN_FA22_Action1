@@ -515,6 +515,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24100000, guid: e0042e702f0f548d09376d4a3bcff5ea, type: 2}
     - target: {fileID: 6590728320930839141, guid: e1829c7351cda4c5cad73a67027b0030, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1687335517}
+    - target: {fileID: 6590728320930839141, guid: e1829c7351cda4c5cad73a67027b0030, type: 3}
+      propertyPath: tokensText
+      value: 
+      objectReference: {fileID: 1687335517}
+    - target: {fileID: 6590728320930839141, guid: e1829c7351cda4c5cad73a67027b0030, type: 3}
       propertyPath: pauseMenuUI
       value: 
       objectReference: {fileID: 658243200}
