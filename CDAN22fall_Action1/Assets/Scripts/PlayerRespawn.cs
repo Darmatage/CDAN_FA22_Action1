@@ -12,18 +12,29 @@ public class PlayerRespawn : MonoBehaviour {
        }
 
        void Update() {
+		   //respawn system without hearts
               if (pSpawn != null){
-                     if (GameHandler.playerHealth <= 0){
+                     if ((GameHandler.playerHealth <= 0)&& (GameHandler.Lives > 0)){
                             //comment out lines from GameHandler about EndLose screen
                             Debug.Log("I am going back to the last spawn point");
-                            Vector3 pSpn2 = new Vector3(pSpawn.position.x, pSpawn.position.y, transform.position.z);
+                            Vector3 pSpn2 = new Vector3(pSpawn.position.x, pSpawn.position.y, 0);
                             gameObject.transform.position = pSpn2;
                      }
               }
        }
 
-       public void OnTriggerEnter2D(Collider2D other) {
-              if (other.gameObject.tag == "Checkpoint"){
+	//respawn system with heart
+	public void RespawnHearts() {
+		if (pSpawn != null){
+			Debug.Log("I am going back to the last spawn point");
+			Vector3 pSpn2 = new Vector3(pSpawn.position.x, pSpawn.position.y, 0);
+			gameObject.transform.position = pSpn2;
+		}
+	}
+
+
+	public void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "Checkpoint"){
                             pSpawn = other.gameObject.transform;
                             GameObject thisCheckpoint = other.gameObject;
                             StopCoroutine(changeColor(thisCheckpoint));

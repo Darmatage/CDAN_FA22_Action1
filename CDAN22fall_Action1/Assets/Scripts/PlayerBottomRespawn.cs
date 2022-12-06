@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerBottomRespawn : MonoBehaviour {
 
-       public GameHandler gameHandler;
-       public Transform playerPos;
+       private GameHandler gameHandler;
+       private Transform playerPos;
        public Transform pSpawnFall;
        public int damage = 10;
 
@@ -21,7 +21,7 @@ public class PlayerBottomRespawn : MonoBehaviour {
 
                      if (transform.position.y >= playerPos.position.y){
                             //instantiate a particle effect
-                            Debug.Log("I am going back to the start");
+                            Debug.Log("I am going back to the last checkpoint");
                             gameHandler.playerGetHit(damage);
                             Vector3 pSpn2 = new Vector3(pSpawnFall.position.x, pSpawnFall.position.y, playerPos.position.z);
                             playerPos.position = pSpn2;

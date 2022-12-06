@@ -7,25 +7,34 @@ using UnityEngine.Audio;
 
 public class GameHandler : MonoBehaviour {
 
-      public static string currentBeast = "bear";
-      private GameObject player;
-      public static int playerHealth = 100;
-      public int StartPlayerHealth = 100;
-      public GameObject healthText;
+	public static int Lives = 5;
+	public int maxLives = 5;
+	public GameObject lifeHeart1;
+	public GameObject lifeHeart2;
+	public GameObject lifeHeart3;
+	public GameObject lifeHeart4;
+	public GameObject lifeHeart5;
 
-      public static int gotTokens = 0;
-      public GameObject tokensText;
 
-      public bool isDefending = false;
+	public static string currentBeast = "bear";
+	private GameObject player;
+	public static int playerHealth = 100;
+	public int StartPlayerHealth = 100;
+	public GameObject healthText;
 
-      public static bool stairCaseUnlocked = false;
-      //this is a flag check. Add to other scripts: GameHandler.stairCaseUnlocked = true;
+	public static int gotTokens = 0;
+	public GameObject tokensText;
 
-      public static bool GameisPaused = false;
-        public GameObject pauseMenuUI;
-        public AudioMixer mixer;
-        public static float volumeLevel = 1.0f;
-        private Slider sliderVolumeCtrl;
+	public bool isDefending = false;
+
+	public static bool stairCaseUnlocked = false;
+	//this is a flag check. Add to other scripts: GameHandler.stairCaseUnlocked = true;
+
+	public static bool GameisPaused = false;
+	public GameObject pauseMenuUI;
+	public AudioMixer mixer;
+	public static float volumeLevel = 1.0f;
+	private Slider sliderVolumeCtrl;
 
         void Awake (){
                 SetLevel (volumeLevel);
@@ -82,38 +91,65 @@ public class GameHandler : MonoBehaviour {
             updateStatsDisplay();
       }
 
-      public void playerGetHit(int damage){
-           if (isDefending == false){
-                  playerHealth -= damage;
-                  if (playerHealth >=0){
-                        updateStatsDisplay();
-                  }
-                  if (damage > 0){
-                        player.GetComponent<PlayerHurt>().playerHit();       //play GetHit animation
-                  }
-            }
 
-           if (playerHealth > StartPlayerHealth){
-                  playerHealth = StartPlayerHealth;
-                  updateStatsDisplay();
-            }
+	public void playerGetHit(int damage){
+		string sceneName = SceneManager.GetActiveScene().name;
+		if (isDefending == false){
+			playerHealth -= damage;
+			if (playerHealth >=0){
+				updateStatsDisplay();
+			}
+			if (damage > 0){
+				player.GetComponent<PlayerHurt>().playerHit();       //play GetHit animation
+			}
+		}
 
-           if (playerHealth <= 0){
-                  playerHealth = 0;
-                  updateStatsDisplay();
-                  playerDies();
+		if (playerHealth > StartPlayerHealth){
+			playerHealth = StartPlayerHealth;
+			updateStatsDisplay();
+		}
+
+		if ((playerHealth <= 0)&&(sceneName != "EndLose")){
+			if (Lives <= 0){
+				playerHealth = 0;
+				updateStatsDisplay();
+				playerDies();
+			} else {
+				if (Lives > 1){
+					playerHealth = StartPlayerHealth;
+				}
+				updateStatsDisplay();
+				UpdateLives(-1, "down");
+			}
+		}
+	}
+
+	public void UpdateLives(int lifeChange, string changeDir){
+		Lives += lifeChange;
+		PlayerRespawn respawn = player.GetComponent<PlayerRespawn>();
+		if (changeDir == "down"){
+			if (lifeHeart5.activeInHierarchy){lifeHeart5.SetActive(false); respawn.RespawnHearts();}
+			else if (lifeHeart4.activeInHierarchy){lifeHeart4.SetActive(false); respawn.RespawnHearts();}
+			else if (lifeHeart3.activeInHierarchy){lifeHeart3.SetActive(false); respawn.RespawnHearts();}
+			else if (lifeHeart2.activeInHierarchy){lifeHeart2.SetActive(false); respawn.RespawnHearts();}
+			else if (lifeHeart1.activeInHierarchy){lifeHeart1.SetActive(false);}
+		} 
+		else if (changeDir == "up"){
+			if (!lifeHeart2.activeInHierarchy){lifeHeart2.SetActive(true);}
+			else if (!lifeHeart3.activeInHierarchy){lifeHeart3.SetActive(true);}
+			else if (!lifeHeart4.activeInHierarchy){lifeHeart4.SetActive(true);}
+			else if (!lifeHeart5.activeInHierarchy){lifeHeart5.SetActive(true);}
+		}
+	}
 
 
-            }
-      }
-
-      public void updateStatsDisplay(){
+	public void updateStatsDisplay(){
             Text healthTextTemp = healthText.GetComponent<Text>();
-            healthTextTemp.text = "HEALTH: " + playerHealth;
+            healthTextTemp.text = "" + playerHealth;
 
             Text tokensTextTemp = tokensText.GetComponent<Text>();
             tokensTextTemp.text = "GOLD: " + gotTokens;
-      }
+	}
 
       public void playerDies(){
             player.GetComponent<PlayerHurt>().playerDead();       //play Death animation
