@@ -7,7 +7,7 @@ public class DamageSlow : MonoBehaviour {
        public int damage = 1;
        public float damageTime = 0.5f;
        private bool isDamaging = false;
-       private float damageTimer = 0f;
+       private float damageTimer = 100f;
        private GameHandler gameHandlerObj;
 
        void Start () {

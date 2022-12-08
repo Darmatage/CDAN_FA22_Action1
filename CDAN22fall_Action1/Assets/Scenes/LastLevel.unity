@@ -36454,6 +36454,7 @@ GameObject:
   - component: {fileID: 382148542}
   - component: {fileID: 382148541}
   - component: {fileID: 382148546}
+  - component: {fileID: 382148547}
   m_Layer: 7
   m_Name: Death
   m_TagString: Untagged
@@ -54187,13 +54188,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382148538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47231ef4ba98342db98d87cd8de1aa9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
   damageTime: 0.5
+--- !u!114 &382148547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382148538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819ea30ee6b2e42e5a0a31c130fdca65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameHandlerObj: {fileID: 0}
+  damage: 100
 --- !u!1001 &384794652
 PrefabInstance:
   m_ObjectHideFlags: 0
