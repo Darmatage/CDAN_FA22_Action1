@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 4557781075889584545}
   - component: {fileID: 4976544224460750698}
   - component: {fileID: 1633584319115237898}
-  - component: {fileID: 9150447355974888539}
+  - component: {fileID: 2668646551806435680}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2D: {fileID: 0}
---- !u!114 &9150447355974888539
+--- !u!114 &2668646551806435680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -653,12 +653,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8173267691788476893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f73be648f809046b0f6d12f8b0ae7f, type: 3}
+  m_Script: {fileID: 11500000, guid: e12fdc5e8bdcf4d059791a58dcdb1764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructableTilemap: {fileID: 0}
-  rangeDestroy: 1
-  canExplode: 1
+  gameHandler: {fileID: 0}
+  pSpawn: {fileID: 0}
 --- !u!1 &8415843159333464212
 GameObject:
   m_ObjectHideFlags: 0
