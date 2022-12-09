@@ -11,7 +11,7 @@ public class DestroyTiles : MonoBehaviour{
        public bool canExplode = true;
        //public GameObject boomFX;
 
-       void Start(){
+       void Awake(){
             TileMapInit();
 			  
 			//destructableTilemap  = GameObject.FindWithTag("TileCollider").GetComponent<Tilemap>();

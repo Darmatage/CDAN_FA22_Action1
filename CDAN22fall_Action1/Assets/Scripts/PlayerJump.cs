@@ -22,15 +22,15 @@ public class PlayerJump : MonoBehaviour {
 
 
     void Start(){
-            //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
+            //anim = gameObject.GetComponent<PlayerAnimal>().curentAnim;
             rb = GetComponent<Rigidbody2D>();
     }
 
     void Update() {
-        //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
+        //anim = gameObject.GetComponent<PlayerAnimal>().curentAnim;
         if (GameHandler.currentBeast=="bear"){
             canJump = false;
-
+			canFly = false;
 		}
 		if (GameHandler.currentBeast=="badger"){
 			//if ((IsGrounded()) || (jumpTimes <= 1)){
@@ -50,7 +50,7 @@ public class PlayerJump : MonoBehaviour {
 				canFly = true;
 			}
 			else{
-				canJump = false;
+				canFly = false; // remove this, to fly more?
 			}
 		}
 

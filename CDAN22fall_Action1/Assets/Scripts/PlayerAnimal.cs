@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimal : MonoBehaviour
-{
+public class PlayerAnimal : MonoBehaviour{
+	
     public GameObject charPigeon;
     public GameObject charBadger;
     public GameObject charBear;
-    //private Animator currentAnim;
+    public Animator currentAnim;
     private int choiceAnimal;
 
     // Start is called before the first frame update
     void Start(){
       WhichAnimal(false);
+	  currentAnim = charPigeon.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -58,7 +59,7 @@ public class PlayerAnimal : MonoBehaviour
           charPigeon.SetActive(true);
           charBadger.SetActive(false);
           charBear.SetActive(false);
-          //currentAnim = charPigeon.GetComponentInChildren<Animator>();
+          currentAnim = charPigeon.GetComponentInChildren<Animator>();
           Debug.Log("3 = Pigeon time: " + choiceAnimal);
         }
       }
@@ -69,21 +70,21 @@ public class PlayerAnimal : MonoBehaviour
           charBadger.SetActive(false);
           charBear.SetActive(true);
           //currentAnim = charBear.GetComponentInChildren<Animator>();
-          Debug.Log("no switch");
+          Debug.Log("no switch, bear");
         }
         if (GameHandler.currentBeast=="badger"){
           charPigeon.SetActive(false);
           charBadger.SetActive(true);
           charBear.SetActive(false);
           //currentAnim = charBadger.GetComponentInChildren<Animator>();
-          Debug.Log("no switch");
+          Debug.Log("no switch, badger");
         }
         if (GameHandler.currentBeast=="pigeon"){
           charPigeon.SetActive(true);
           charBadger.SetActive(false);
           charBear.SetActive(false);
-          //currentAnim = charPigeon.GetComponentInChildren<Animator>();
-          Debug.Log("no switch");
+          currentAnim = charPigeon.GetComponentInChildren<Animator>();
+          Debug.Log("no switch, pigeon");
         }
       }
 
