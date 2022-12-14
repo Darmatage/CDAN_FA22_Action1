@@ -16,8 +16,9 @@ public class PlayerJump : MonoBehaviour {
     //public AudioSource JumpSFX;
 	public float feetRange = 1f;
 
-	bool isBird = false;
+	//bool isBird = false;
 	bool canFly = false;
+  public static bool flyEnergyEnough = true;
 	public float groundPos = 0;
 
 
@@ -46,7 +47,8 @@ public class PlayerJump : MonoBehaviour {
 
 		if (GameHandler.currentBeast=="pigeon"){
 			//if ((IsGrounded()) || (jumpTimes <= 1)){
-			if (IsGrounded()){
+			//if ((IsGrounded())&&(flyEnergyEnough)){
+      if (flyEnergyEnough){
 				canFly = true;
 			}
 			else{
@@ -76,12 +78,14 @@ public class PlayerJump : MonoBehaviour {
     }
 
 	public void Fly(){
+    rb.velocity = Vector2.up * (jumpForce/2);
+    //rb.velocity = Vector2.up * (jumpForce/2);
+    StopCoroutine(BirdDrop());
 		StartCoroutine(BirdDrop());
-		rb.velocity = Vector2.up * (jumpForce/2);
-
 	}
 
 	IEnumerator BirdDrop(){
+    yield return new WaitForSeconds(1f);
 		rb.velocity = Vector2.up * (jumpForce/3);
 		yield return new WaitForSeconds(0.5f);
 		rb.velocity = Vector2.up * (jumpForce/4);
