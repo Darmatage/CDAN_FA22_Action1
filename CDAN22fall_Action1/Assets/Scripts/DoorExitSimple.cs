@@ -7,10 +7,19 @@ public class DoorExitSimple : MonoBehaviour{
 
       public string NextLevel = "MainMenu";
 
-      public void OnCollisionEnter2D(Collision2D other){
+
+      public void OnTriggerEnter2D(Collider2D other){
+		  Debug.Log("I hit something");
             if (other.gameObject.tag == "Player"){
                   SceneManager.LoadScene (NextLevel);
             }
       }
+
+
+      // public void OnCollisionEnter2D(Collision2D other){
+            // if (other.gameObject.tag == "Player"){
+                  // SceneManager.LoadScene (NextLevel);
+            // }
+      // }
 
 }
