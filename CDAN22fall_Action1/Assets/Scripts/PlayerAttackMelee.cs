@@ -9,7 +9,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       public float attackRange = 0.5f;
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
-      public int attackDamage = 40;
+      public int attackDamage = 80;
       public LayerMask enemyLayers;
 
       void Start(){
@@ -30,7 +30,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       void Attack(){
             //animator.SetTrigger ("Melee");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
-           
+
             foreach(Collider2D enemy in hitEnemies){
                   Debug.Log("We hit " + enemy.name);
                   enemy.GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);

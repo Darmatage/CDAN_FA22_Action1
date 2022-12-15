@@ -241,7 +241,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8173267691788476880}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906977079825662825
 GameObject:
@@ -1011,6 +1011,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &4443313661136975754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4705573486488802614}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4705573486488802614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443313661136975754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.191, y: -0.574, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8173267691788476880}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4676682976107978035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,7 +2319,7 @@ Transform:
   - {fileID: 7864049212780887471}
   - {fileID: 4041085642608762740}
   m_Father: {fileID: 8173267691788476880}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8173267690950138352
 GameObject:
@@ -2445,6 +2476,7 @@ GameObject:
   - component: {fileID: 4976544224460750698}
   - component: {fileID: 1633584319115237898}
   - component: {fileID: 1907794796783741396}
+  - component: {fileID: 4735307501067738820}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2468,6 +2500,7 @@ Transform:
   - {fileID: 4223929456683230194}
   - {fileID: 8437725087839518556}
   - {fileID: 673234157518703622}
+  - {fileID: 4705573486488802614}
   - {fileID: 8948667148982575915}
   - {fileID: 2726782772422634571}
   m_Father: {fileID: 0}
@@ -2657,6 +2690,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameHandler: {fileID: 0}
   pSpawn: {fileID: 0}
+--- !u!114 &4735307501067738820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8173267691788476893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607024ad5e95646dea524fe28f9a0f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 4705573486488802614}
+  projectilePrefab: {fileID: 7347335548185092384, guid: bf4a796014d964bd1bc0e963b44f199b, type: 3}
+  projectileSpeed: 10
+  attackRate: 2
 --- !u!1 &8415843159333464212
 GameObject:
   m_ObjectHideFlags: 0
