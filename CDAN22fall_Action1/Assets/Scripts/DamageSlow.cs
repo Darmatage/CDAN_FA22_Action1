@@ -26,13 +26,13 @@ public class DamageSlow : MonoBehaviour {
               }
        }
 
-       void OnTriggerStay2D(Collider2D other){
+       void OnCollisionEnter2D(Collision2D other){
               if (other.gameObject.tag == "Player") {
                      isDamaging = true;
               }
        }
 
-       void OnTriggerExit2D(Collider2D other){
+       void OnCollisionExit2D(Collision2D other){
               if (other.gameObject.tag == "Player") {
                      isDamaging = false;
               }

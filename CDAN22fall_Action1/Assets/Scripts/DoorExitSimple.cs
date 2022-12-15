@@ -7,7 +7,7 @@ public class DoorExitSimple : MonoBehaviour{
 
       public string NextLevel = "MainMenu";
 
-      public void OnTriggerEnter2D(Collider2D other){
+      public void OnCollisionEnter2D(Collision2D other){
             if (other.gameObject.tag == "Player"){
                   SceneManager.LoadScene (NextLevel);
             }
