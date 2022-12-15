@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -5653,9 +5653,9 @@ TextureImporter:
       pigeonlevel_tilemap_77: 2135499315
       pigeonlevel_tilemap_191: -1179008916
       pigeonlevel_tilemap_152: -1606572795
-      pigeonlevel_tilemap_212: -1228383833
       pigeonlevel_tilemap_220: -906585449
       pigeonlevel_tilemap_241: 48793190
+      pigeonlevel_tilemap_212: -1228383833
       pigeonlevel_tilemap_226: -1853762114
       pigeonlevel_tilemap_67: 760828123
       pigeonlevel_tilemap_69: -1517123336
