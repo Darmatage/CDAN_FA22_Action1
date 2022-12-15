@@ -17,10 +17,12 @@ public class PlayerAttackShoot : MonoBehaviour{
 
       void Update(){
            if (Time.time >= nextAttackTime){
-                  //if (Input.GetKeyDown(KeyCode.Space))
+                //if (Input.GetKeyDown(KeyCode.Space))
                  if ((Input.GetAxis("Attack") > 0)&&(GameHandler.currentBeast == "bird")){
+                   Debug.Log("i tried to egg");
                         playerFire();
                         nextAttackTime = Time.time + 1f / attackRate;
+                        Debug.Log("i shot");
                   }
             }
       }
