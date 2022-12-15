@@ -32,7 +32,7 @@ public class DamageSlow : MonoBehaviour {
               }
        }
 
-       void OnTriggerStay2D(Collider2D other){
+       void OnTriggerExit2D(Collider2D other){
               if (other.gameObject.tag == "Player") {
                      isDamaging = false;
               }
