@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class EnemyMoveHit : MonoBehaviour {
 
-       //public Animator anim;
-       public Rigidbody2D rb2D;
-       public float speed = 4f;
-       private Transform target;
-       public int damage = 10;
+	//public Animator anim;
+	public Rigidbody2D rb2D;
+	public float speed = 4f;
+	private Transform target;
+	public int damage = 10;
 
-       public int EnemyLives = 3;
-       private GameHandler gameHandler;
+	public int EnemyLives = 3;
+	private GameHandler gameHandler;
 
-       public float attackRange = 10;
-       public bool isAttacking = false;
-       private float scaleX;
+	public float attackRange = 10;
+	public bool isAttacking = false;
+	private float scaleX;
 
-       void Start () {
+	public float knockBackForce = 20f; 
+
+	void Start () {
               //anim = GetComponentInChildren<Animator> ();
               rb2D = GetComponentInChildren<Rigidbody2D> ();
               scaleX = gameObject.transform.localScale.x;
@@ -47,13 +49,23 @@ public class EnemyMoveHit : MonoBehaviour {
                //else { anim.SetBool("Walk", false);}
        }
 
-       public void OnCollisionEnter2D(Collision2D other){
-              if (other.gameObject.tag == "Player") {
-                     isAttacking = true;
-                     //anim.SetBool("Attack", true);
-                     gameHandler.playerGetHit(damage);
-              }
-       }
+	public void OnCollisionEnter2D(Collision2D other){
+		if (other.gameObject.tag == "Player") {
+			isAttacking = true;
+			//anim.SetBool("Attack", true);
+			gameHandler.playerGetHit(damage);
+					 
+			Rigidbody2D pushRB = other.gameObject.GetComponent<Rigidbody2D>();
+			Vector2 moveDirectionPush = rb2D.transform.position - other.transform.position;
+			pushRB.AddForce(moveDirectionPush.normalized * knockBackForce * - 1f, ForceMode2D.Impulse);
+			StartCoroutine(EndKnockBack(pushRB)); 
+		}
+	}
+
+	IEnumerator EndKnockBack(Rigidbody2D otherRB){
+		yield return new WaitForSeconds(0.2f);
+		otherRB.velocity= new Vector3(0,0,0);
+	} 
 
        public void OnCollisionExit2D(Collision2D other){
               if (other.gameObject.tag == "Player") {

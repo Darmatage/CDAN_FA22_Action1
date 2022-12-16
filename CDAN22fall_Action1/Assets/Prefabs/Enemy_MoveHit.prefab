@@ -181,9 +181,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2D: {fileID: 0}
   speed: 4
-  damage: 10
+  damage: 5
   EnemyLives: 3
-  attackRange: 10
+  attackRange: 5
   isAttacking: 0
 --- !u!114 &1619608211815396799
 MonoBehaviour:
@@ -200,3 +200,4 @@ MonoBehaviour:
   healthLoot: {fileID: 4774579788167191143, guid: d0f182548f9147745b8e0b96d073f3ea, type: 3}
   maxHealth: 100
   currentHealth: 0
+  knockBackForce: 20

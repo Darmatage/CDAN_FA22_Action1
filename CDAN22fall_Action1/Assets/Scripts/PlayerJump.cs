@@ -85,14 +85,14 @@ public class PlayerJump : MonoBehaviour {
 	}
 
 	IEnumerator BirdDrop(){
-    yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(0.5f);
 		rb.velocity = Vector2.up * (jumpForce/3);
 		yield return new WaitForSeconds(0.5f);
 		rb.velocity = Vector2.up * (jumpForce/4);
-		yield return new WaitForSeconds(0.5f);
-		rb.velocity = Vector2.up * (jumpForce/5);
-		yield return new WaitForSeconds(0.5f);
-		rb.velocity = Vector2.up * (jumpForce/5);
+		//yield return new WaitForSeconds(0.5f);
+		//rb.velocity = Vector2.up * (jumpForce/5);
+		//yield return new WaitForSeconds(0.5f);
+		//rb.velocity = Vector2.up * (jumpForce/5);
 
 		yield return new WaitForSeconds(1f);
 		canFly = false;

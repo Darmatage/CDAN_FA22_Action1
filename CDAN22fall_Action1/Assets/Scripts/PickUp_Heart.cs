@@ -14,6 +14,8 @@ public class PickUp_Heart: MonoBehaviour {
                    gameHandler.UpdateLives (1, "up");
                   //playerPowerupVFX.powerup();
                   Destroy(gameObject);
-              }
+              } else {
+				  Debug.Log("You already have maximum lives");
+			  }
        }
 }
