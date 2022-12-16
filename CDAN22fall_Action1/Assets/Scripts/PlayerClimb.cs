@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerClimb : MonoBehaviour {
 
-    //public Animator anim;
+    public Animator anim;
     public Rigidbody2D rb;
     public float climbForce = 7f;
     public Transform feet;
@@ -22,12 +22,12 @@ public class PlayerClimb : MonoBehaviour {
 
 
     void Start(){
-            //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
+            anim = gameObject.GetComponent<PlayerAnimal>().currentAnim;
             rb = GetComponent<Rigidbody2D>();
     }
 
     void Update() {
-        //animator = gameObject.GetComponent<PlayerAnimal>().curentAnim;
+        anim = gameObject.GetComponent<PlayerAnimal>().currentAnim;
 		if (GameHandler.currentBeast=="bear"){
 			//if ((IsGrounded()) || (jumpTimes <= 1)){
 			if (IsClimeable()){
@@ -38,11 +38,15 @@ public class PlayerClimb : MonoBehaviour {
 				canClimb = false;
 			}
 		} else {canClimb = false;}
-		
-		
-		
+
+
+
     if ((Input.GetButtonDown("Jump")) && (canClimb) && (isAlive == true)) {
       Climb();
+      anim.SetBool("climb",true);
+    }
+    else{
+      anim.SetBool("climb",false);
     }
 
     }

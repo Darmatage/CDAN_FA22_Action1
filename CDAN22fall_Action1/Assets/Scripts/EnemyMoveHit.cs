@@ -17,7 +17,7 @@ public class EnemyMoveHit : MonoBehaviour {
 	public bool isAttacking = false;
 	private float scaleX;
 
-	public float knockBackForce = 20f; 
+	public float knockBackForce = 20f;
 
 	void Start () {
               //anim = GetComponentInChildren<Animator> ();
@@ -50,25 +50,25 @@ public class EnemyMoveHit : MonoBehaviour {
        }
 
 	public void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.tag == "Player") {
+		if (other.gameObject.transform.parent.tag == "Player") {
 			isAttacking = true;
 			//anim.SetBool("Attack", true);
 			gameHandler.playerGetHit(damage);
-					 
+
 			Rigidbody2D pushRB = other.gameObject.GetComponent<Rigidbody2D>();
 			Vector2 moveDirectionPush = rb2D.transform.position - other.transform.position;
 			pushRB.AddForce(moveDirectionPush.normalized * knockBackForce * - 1f, ForceMode2D.Impulse);
-			StartCoroutine(EndKnockBack(pushRB)); 
+			StartCoroutine(EndKnockBack(pushRB));
 		}
 	}
 
 	IEnumerator EndKnockBack(Rigidbody2D otherRB){
 		yield return new WaitForSeconds(0.2f);
 		otherRB.velocity= new Vector3(0,0,0);
-	} 
+	}
 
        public void OnCollisionExit2D(Collision2D other){
-              if (other.gameObject.tag == "Player") {
+              if (other.gameObject.transform.parent.tag == "Player") {
                      isAttacking = false;
                      //anim.SetBool("Attack", false);
               }

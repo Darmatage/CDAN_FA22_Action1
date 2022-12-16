@@ -13,12 +13,12 @@ public class PlayerMove : MonoBehaviour {
       public float startSpeed = 10f;
       public bool isAlive = true;
       private Vector3 hMove;
-	  
+
 	  //pigeon ground test
 	  public LayerMask groundLayer;
 	  public Transform feet;
 	  public float feetRange = 1f;
-	  
+
 	  //sound effects
 	  public AudioSource pigeonWalk_SFX1;
 	  public AudioSource pigeonWalk_SFX2;
@@ -27,16 +27,16 @@ public class PlayerMove : MonoBehaviour {
 
       void Start(){
            rb2D = transform.GetComponent<Rigidbody2D>();
-		   WalkSFX = pigeonWalk_SFX1;
+		   		WalkSFX = pigeonWalk_SFX1;
       }
 
 	void Update(){
 		anim = gameObject.GetComponent<PlayerAnimal>().currentAnim;
 		int newSound = Random.Range (1, 3);
-		   
+
 		//NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
 		hMove = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
-		
+
 		if (isAlive == true){
 			if (GameHandler.currentBeast=="bear"){
 				transform.position = transform.position + hMove * runSpeed1 * Time.deltaTime;
@@ -47,7 +47,7 @@ public class PlayerMove : MonoBehaviour {
 					//if (newSound == 1){WalkSFX = bearWalk_SFX1;}
 					//else if (newSound == 2){WalkSFX = bearWalk_SFX2;}
 					//else if (newSound == 3){WalkSFX = bearWalk_SFX3;}
-						
+
 					//if (!WalkSFX.isPlaying){
 					//       WalkSFX.Play();
 					//}
@@ -67,7 +67,7 @@ public class PlayerMove : MonoBehaviour {
 					//if (newSound == 1){WalkSFX = badgerWalk_SFX1;}
 					//else if (newSound == 2){WalkSFX = badgerWalk_SFX2;}
 					//else if (newSound == 3){WalkSFX = badgerWalk_SFX3;}
-						
+
 					//if (!WalkSFX.isPlaying){
 					//       WalkSFX.Play();
 					//}
@@ -85,11 +85,11 @@ public class PlayerMove : MonoBehaviour {
 					Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, feetRange, groundLayer);
 					if (groundCheck != null){anim.SetBool ("walk", true); anim.SetBool ("fly", false);}
 					else {anim.SetBool ("walk", false); anim.SetBool ("fly", true);}
-			  
+
 					if (newSound == 1){WalkSFX = pigeonWalk_SFX1;}
 					else if (newSound == 2){WalkSFX = pigeonWalk_SFX2;}
 					else if (newSound == 3){WalkSFX = pigeonWalk_SFX3;}
-						
+
 					if (!WalkSFX.isPlaying){
 						WalkSFX.Play();
 					}

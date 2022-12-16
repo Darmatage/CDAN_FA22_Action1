@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimal : MonoBehaviour{
-	
+
     public GameObject charPigeon;
     public GameObject charBadger;
     public GameObject charBear;
@@ -13,7 +13,7 @@ public class PlayerAnimal : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
       WhichAnimal(false);
-	  currentAnim = charPigeon.GetComponentInChildren<Animator>();
+	  	currentAnim = charBear.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class PlayerAnimal : MonoBehaviour{
           charPigeon.SetActive(false);
           charBadger.SetActive(false);
           charBear.SetActive(true);
-          //currentAnim = charBear.GetComponentInChildren<Animator>();
+          currentAnim = charBear.GetComponentInChildren<Animator>();
           Debug.Log("1 = Bear time: " + choiceAnimal);
         }
         if (choiceAnimal == 2){
@@ -51,7 +51,7 @@ public class PlayerAnimal : MonoBehaviour{
           charPigeon.SetActive(false);
           charBadger.SetActive(true);
           charBear.SetActive(false);
-          //currentAnim = charBadger.GetComponentInChildren<Animator>();
+          currentAnim = charBadger.GetComponentInChildren<Animator>();
           Debug.Log("2 = Badger time: " + choiceAnimal);
         }
         if (choiceAnimal == 3){
@@ -69,14 +69,14 @@ public class PlayerAnimal : MonoBehaviour{
           charPigeon.SetActive(false);
           charBadger.SetActive(false);
           charBear.SetActive(true);
-          //currentAnim = charBear.GetComponentInChildren<Animator>();
+          currentAnim = charBear.GetComponentInChildren<Animator>();
           Debug.Log("no switch, bear");
         }
         if (GameHandler.currentBeast=="badger"){
           charPigeon.SetActive(false);
           charBadger.SetActive(true);
           charBear.SetActive(false);
-          //currentAnim = charBadger.GetComponentInChildren<Animator>();
+          currentAnim = charBadger.GetComponentInChildren<Animator>();
           Debug.Log("no switch, badger");
         }
         if (GameHandler.currentBeast=="pigeon"){

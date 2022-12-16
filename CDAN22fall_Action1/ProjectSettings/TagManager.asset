@@ -9,6 +9,9 @@ TagManager:
   - PauseMenuSlider
   - TileCollider
   - Checkpoint
+  - Badger
+  - Bear
+  - Pigeon
   layers:
   - Default
   - TransparentFX
