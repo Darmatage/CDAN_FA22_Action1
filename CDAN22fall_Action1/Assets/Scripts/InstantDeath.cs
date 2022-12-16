@@ -15,7 +15,7 @@ public class InstantDeath : MonoBehaviour {
        }
 
        public void OnCollisionEnter2D(Collision2D other) {
-              if (other.gameObject.transform.parent.tag == "Player") {
+              if (other.gameObject.tag == "Player") {
                      gameHandlerObj.playerGetHit(damage);
                      //other.transform.position = new Vector3(backToStart.position.x, backToStart.position.y, backToStart.position.z);
               }

@@ -50,7 +50,7 @@ public class EnemyMoveHit : MonoBehaviour {
        }
 
 	public void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.transform.parent.tag == "Player") {
+		if (other.gameObject.tag == "Player") {
 			isAttacking = true;
 			//anim.SetBool("Attack", true);
 			gameHandler.playerGetHit(damage);
@@ -68,7 +68,7 @@ public class EnemyMoveHit : MonoBehaviour {
 	}
 
        public void OnCollisionExit2D(Collision2D other){
-              if (other.gameObject.transform.parent.tag == "Player") {
+              if (other.gameObject.tag == "Player") {
                      isAttacking = false;
                      //anim.SetBool("Attack", false);
               }
