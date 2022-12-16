@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttackMelee : MonoBehaviour{
 
-      //public Animator animator;
+      public Animator anim; //dragged directly into slot
       public Transform attackPt;
       public float attackRange = 0.5f;
       public float attackRate = 2f;
@@ -12,17 +12,16 @@ public class PlayerAttackMelee : MonoBehaviour{
       public int attackDamage = 80;
       public LayerMask enemyLayers;
 
-      void Start(){
-           //animator = gameObject.GetComponentInChildren<Animator>();
-      }
 
       void Update(){
+        anim = gameObject.GetComponent<PlayerAnimal>().currentAnim;
            if (Time.time >= nextAttackTime){
                   //if (Input.GetKeyDown(KeyCode.Space))
                  if ((Input.GetAxis("Attack") > 0)&&(GameHandler.currentBeast == "bear")){
                         Attack();
+                        anim.SetTrigger ("attack");
                         nextAttackTime = Time.time + 1f / attackRate;
-						//Debug.Log("I pressed Attack"));
+						                 //Debug.Log("I pressed Attack"));
                   }
             }
       }

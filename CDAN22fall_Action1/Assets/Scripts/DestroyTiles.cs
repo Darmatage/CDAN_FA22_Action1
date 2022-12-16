@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class DestroyTiles : MonoBehaviour{
 
+    public Animator anim;
        public Tilemap destructableTilemap;
        private List<Vector3> tileWorldLocations;
        public float rangeDestroy = 1f;
@@ -13,13 +14,15 @@ public class DestroyTiles : MonoBehaviour{
 
        void Awake(){
             TileMapInit();
-			  
-			//destructableTilemap  = GameObject.FindWithTag("TileCollider").GetComponent<Tilemap>();
+			      //destructableTilemap  = GameObject.FindWithTag("TileCollider").GetComponent<Tilemap>();
        }
 
+
        void Update(){
+         anim = gameObject.GetComponent<PlayerAnimal>().currentAnim;
               if ((Input.GetAxis("Attack") > 0) && (canExplode == true) &&(GameHandler.currentBeast == "badger")){
                      destroyTileArea();
+                     anim.SetTrigger ("dig");
               }
        }
 
