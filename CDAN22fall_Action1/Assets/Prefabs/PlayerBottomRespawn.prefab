@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pSpawnFall: {fileID: 0}
-  damage: 10
+  damage: 100

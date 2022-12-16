@@ -9,6 +9,7 @@ public class PlayerRespawn : MonoBehaviour {
 
        void Start() {
               gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+			  pSpawn = GameObject.FindWithTag("Respawn").transform;
        }
 
        void Update() {

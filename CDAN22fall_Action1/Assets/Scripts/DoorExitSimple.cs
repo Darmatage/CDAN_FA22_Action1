@@ -10,14 +10,14 @@ public class DoorExitSimple : MonoBehaviour{
 
       public void OnTriggerEnter2D(Collider2D other){
 		  Debug.Log("I hit something");
-            if (other.gameObject.tag == "Player"){
+            if (other.gameObject.transform.parent.tag == "Player"){
                   SceneManager.LoadScene (NextLevel);
             }
       }
 
 
       // public void OnCollisionEnter2D(Collision2D other){
-            // if (other.gameObject.tag == "Player"){
+            // if (other.gameObject.transform.parent.tag == "Player"){
                   // SceneManager.LoadScene (NextLevel);
             // }
       // }
