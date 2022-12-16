@@ -133,7 +133,7 @@ public class GameHandler : MonoBehaviour {
 			else if (lifeHeart3.activeInHierarchy){lifeHeart3.SetActive(false); respawn.RespawnHearts();}
 			else if (lifeHeart2.activeInHierarchy){lifeHeart2.SetActive(false); respawn.RespawnHearts();}
 			else if (lifeHeart1.activeInHierarchy){lifeHeart1.SetActive(false);}
-		} 
+		}
 		else if (changeDir == "up"){
 			if (!lifeHeart2.activeInHierarchy){lifeHeart2.SetActive(true);}
 			else if (!lifeHeart3.activeInHierarchy){lifeHeart3.SetActive(true);}
@@ -164,7 +164,7 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void StartGame() {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Tutorial");
       }
 
       public void RestartGame() {
