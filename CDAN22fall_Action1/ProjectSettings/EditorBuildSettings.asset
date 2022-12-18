@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndLose.unity
     guid: 9bc490b6261ef481cba56cc3484457ca
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: d793f54b56b9d4fada13f72f62152844
   m_configObjects: {}
