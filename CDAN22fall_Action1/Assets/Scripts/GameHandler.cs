@@ -183,4 +183,22 @@ public class GameHandler : MonoBehaviour {
       public void Credits() {
             SceneManager.LoadScene("Credits");
       }
+			public void LevelSelect() {
+            SceneManager.LoadScene("LevelSelect");
+      }
+			public void Level1() {
+            SceneManager.LoadScene("Tutorial");
+      }
+			public void Level2() {
+            SceneManager.LoadScene("PigeonLevel");
+      }
+			public void Level3() {
+            SceneManager.LoadScene("MountainLevel");
+      }
+			public void Level4() {
+            SceneManager.LoadScene("Challenge");
+      }
+			public void Level5() {
+            SceneManager.LoadScene("LastLevel");
+      }
 }
