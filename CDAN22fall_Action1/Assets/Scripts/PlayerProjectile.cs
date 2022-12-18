@@ -7,10 +7,12 @@ public class PlayerProjectile : MonoBehaviour{
       public int damage = 1;
       public GameObject hitEffectAnim;
       public float SelfDestructTime = 2.0f;
+	  public float SelfDestructVFX = 1f;
       public SpriteRenderer projectileArt;
 
       void Start(){
            projectileArt = GetComponentInChildren<SpriteRenderer>();
+		   //selfDestruct();
       }
 
       //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
@@ -19,17 +21,25 @@ public class PlayerProjectile : MonoBehaviour{
                   //gameHandlerObj.playerGetHit(damage);
                   other.gameObject.GetComponent<EnemyMeleeDamage>().TakeDamage(damage);
             }
-           if (other.gameObject.tag != "Player") {
+           if ((other.gameObject.tag != "Player")||(other.gameObject.transform.parent.tag != "Player")) {
                   GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
                   projectileArt.enabled = false;
                   //Destroy (animEffect, 0.5);
-                  StartCoroutine(selfDestruct(animEffect));
+                  StartCoroutine(selfDestructHit(animEffect));
             }
       }
 
-      IEnumerator selfDestruct(GameObject VFX){
-            yield return new WaitForSeconds(SelfDestructTime);
+      IEnumerator selfDestructHit(GameObject VFX){
+            yield return new WaitForSeconds(SelfDestructVFX);
             Destroy (VFX);
             Destroy (gameObject);
       }
+	  
+	  
+	  IEnumerator selfDestruct(){
+            yield return new WaitForSeconds(SelfDestructTime);
+            Destroy (gameObject);
+      }
+	  
+	  
 }

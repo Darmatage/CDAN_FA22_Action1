@@ -1044,7 +1044,7 @@ GameObject:
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2698,6 +2698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27150111920e4d5ab46402ec5cace47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   rb: {fileID: 0}
   climbForce: 7
   feet: {fileID: 8173267691315211359}
@@ -2719,6 +2720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39350fb8f9dab4afc97500f1e1a82f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   rb2D: {fileID: 0}
 --- !u!114 &1907794796783741396
 MonoBehaviour:
