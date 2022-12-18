@@ -18,7 +18,7 @@ public class PlayerAttackShoot : MonoBehaviour{
       void Update(){
            if (Time.time >= nextAttackTime){
                 //if (Input.GetKeyDown(KeyCode.Space))
-                 if ((Input.GetAxis("Attack") > 0)&&(GameHandler.currentBeast == "bird")){
+                 if ((Input.GetAxis("Attack") > 0)&&(GameHandler.currentBeast == "pigeon")){
                    Debug.Log("i tried to egg");
                         playerFire();
                         nextAttackTime = Time.time + 1f / attackRate;
