@@ -28,11 +28,11 @@ public class EnemyProjectile : MonoBehaviour {
        }
 
        //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
-       void OnTriggerEnter2D(Collider2D collision){
-              if (collision.gameObject.tag == "Player") {
+       void OnTriggerEnter2D(Collider2D other){
+              if (other.gameObject.transform.parent.tag == "Player") {
                      gameHandlerObj.playerGetHit(damage);
               }
-              if (collision.gameObject.tag != "enemyShooter") {
+              if (other.gameObject.tag != "enemyShooter") {
                      GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
                      Destroy (animEffect, 0.5f);
                      Destroy (gameObject);
