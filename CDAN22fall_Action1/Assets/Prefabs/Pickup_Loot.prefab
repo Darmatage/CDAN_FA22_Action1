@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4327208787968431163}
   - component: {fileID: 4410262344029472697}
   - component: {fileID: 5925376219926404007}
+  - component: {fileID: 4351587875965789515}
   m_Layer: 0
   m_Name: Pickup_Loot
   m_TagString: Untagged
@@ -72,6 +73,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f485a40f876b63c4685eb519b2297055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4351587875965789515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774579788167191143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d69e32f9f5a8be499a6290d7d17e0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedS: 1.2
+  distS: 0.3
 --- !u!1 &5479182509830024303
 GameObject:
   m_ObjectHideFlags: 0

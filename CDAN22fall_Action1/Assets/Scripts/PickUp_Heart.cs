@@ -10,7 +10,7 @@ public class PickUp_Heart: MonoBehaviour {
        }
 
        void OnTriggerEnter2D(Collider2D other) {
-              if ((other.gameObject.tag == "Player") && (GameHandler.Lives < gameHandler.maxLives)){
+              if ((other.gameObject.transform.parent.tag == "Player") && (GameHandler.Lives < gameHandler.maxLives)){
                    gameHandler.UpdateLives (1, "up");
                   //playerPowerupVFX.powerup();
                   Destroy(gameObject);
