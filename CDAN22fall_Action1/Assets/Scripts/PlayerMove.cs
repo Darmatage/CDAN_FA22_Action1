@@ -49,7 +49,7 @@ public class PlayerMove : MonoBehaviour {
 					//else if (newSound == 3){WalkSFX = bearWalk_SFX3;}
 
 					//if (!WalkSFX.isPlaying){
-					//       WalkSFX.Play();
+					      // WalkSFX.Play();
 					//}
 				} else {
 					anim.SetBool ("walk", false);
@@ -69,7 +69,7 @@ public class PlayerMove : MonoBehaviour {
 					//else if (newSound == 3){WalkSFX = badgerWalk_SFX3;}
 
 					//if (!WalkSFX.isPlaying){
-					//       WalkSFX.Play();
+					  //     WalkSFX.Play();
 					//}
                 } else {
                       anim.SetBool ("walk", false);
