@@ -44,13 +44,13 @@ public class PlayerMove : MonoBehaviour {
 				if (Input.GetAxis("Horizontal") != 0){
 					anim.SetBool ("walk", true);
 
-					if (newSound == 1){WalkSFX = bearWalk_SFX1;}
-					else if (newSound == 2){WalkSFX = bearWalk_SFX2;}
-					else if (newSound == 3){WalkSFX = bearWalk_SFX3;}
+					//if (newSound == 1){WalkSFX = bearWalk_SFX1;}
+					//else if (newSound == 2){WalkSFX = bearWalk_SFX2;}
+					//else if (newSound == 3){WalkSFX = bearWalk_SFX3;}
 
-					if (!WalkSFX.isPlaying){
-					       WalkSFX.Play();
-					}
+					//if (!WalkSFX.isPlaying){
+					      // WalkSFX.Play();
+					//}
 				} else {
 					anim.SetBool ("walk", false);
 					WalkSFX.Stop();
@@ -64,13 +64,13 @@ public class PlayerMove : MonoBehaviour {
 				if (Input.GetAxis("Horizontal") != 0){
 					anim.SetBool ("walk", true);
 
-					if (newSound == 1){WalkSFX = badgerWalk_SFX1;}
-					else if (newSound == 2){WalkSFX = badgerWalk_SFX2;}
-					else if (newSound == 3){WalkSFX = badgerWalk_SFX3;}
+					//if (newSound == 1){WalkSFX = badgerWalk_SFX1;}
+					//else if (newSound == 2){WalkSFX = badgerWalk_SFX2;}
+					//else if (newSound == 3){WalkSFX = badgerWalk_SFX3;}
 
-					if (!WalkSFX.isPlaying){
-					       WalkSFX.Play();
-					}
+					//if (!WalkSFX.isPlaying){
+					  //     WalkSFX.Play();
+					//}
                 } else {
                       anim.SetBool ("walk", false);
                       WalkSFX.Stop();
