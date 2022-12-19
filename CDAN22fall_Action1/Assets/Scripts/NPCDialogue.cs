@@ -20,6 +20,7 @@ public class NPCDialogue : MonoBehaviour {
        }
 
        private void OnTriggerEnter2D(Collider2D other){
+		   if (other.gameObject.transform.parent != null){
               if (other.gameObject.transform.parent.tag == "Player") {
                      playerInRange = true;
                      dialogueMNGR.LoadDialogueArray(dialogue, dialogueLength);
@@ -27,14 +28,17 @@ public class NPCDialogue : MonoBehaviour {
                      //anim.SetBool("Chat", true);
                      //Debug.Log("Player in range");
               }
+		   }
        }
 
        private void OnTriggerExit2D(Collider2D other){
+		   if (other.gameObject.transform.parent != null){
               if (other.gameObject.transform.parent.tag =="Player") {
                      playerInRange = false;
                      dialogueMNGR.CloseDialogue();
                      //anim.SetBool("Chat", false);
                      //Debug.Log("Player left range");
               }
+		   }
        }
 }

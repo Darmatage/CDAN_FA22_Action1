@@ -12,6 +12,7 @@ TagManager:
   - Badger
   - Bear
   - Pigeon
+  - enemyShooter
   layers:
   - Default
   - TransparentFX

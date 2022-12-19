@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour {
 
        public GameHandler gameHandlerObj;
-       public int damage =1;
+       public int damage =100;
        public float speed = 10f;
        private Transform playerTrans;
        private Vector2 target;
@@ -21,6 +21,15 @@ public class EnemyProjectile : MonoBehaviour {
                gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
              }
              StartCoroutine(selfDestruct());
+			 
+			 
+			 //new code for trajectory:
+			 Vector2 startPos = transform.position;
+			 float distance = Vector2.Distance(startPos, target);
+				distance = distance * (10);
+			 Vector2 difference = target - startPos;
+				difference = difference.normalized * distance;
+				target = (startPos + difference);
        }
 
        void Update () {
@@ -28,10 +37,14 @@ public class EnemyProjectile : MonoBehaviour {
        }
 
        //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
-       void OnTriggerEnter2D(Collider2D other){
-              if (other.gameObject.transform.parent.tag == "Player") {
+       //void OnTriggerEnter2D(Collider2D other){
+       //       if (other.gameObject.transform.parent.tag == "Player") {
+				  
+		void OnCollisionEnter2D(Collision2D other){
+              if (other.gameObject.tag == "Player") {		  
                      gameHandlerObj.playerGetHit(damage);
               }
+			  
               if (other.gameObject.tag != "enemyShooter") {
                      GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
                      Destroy (animEffect, 0.5f);
