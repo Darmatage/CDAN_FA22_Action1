@@ -30,6 +30,9 @@ public class NPCDialogueManager : MonoBehaviour {
 
        public void OpenDialogue(){
               dialogueBox.SetActive(true);
+			  //test to see if this auto-loads rthe first line of dialogue
+			  dialogueText.text = dialogue[0]; 
+			  counter = 1;
        }
 
        public void CloseDialogue(){

@@ -10,7 +10,16 @@ public class PlayerAnimal : MonoBehaviour{
     public Animator currentAnim;
     private int choiceAnimal;
 
-    // Start is called before the first frame update
+	//For Testing
+	public string CurrentAnimal; 
+
+
+	void Awake(){
+		//adding this line to bring back digging
+		gameObject.GetComponent<DestroyTiles>().enabled=true;
+    }
+
+
     void Start(){
       WhichAnimal(false);
 	  	currentAnim = charBear.GetComponentInChildren<Animator>();
@@ -33,6 +42,12 @@ public class PlayerAnimal : MonoBehaviour{
         choiceAnimal = 3;
         WhichAnimal(true);
       }
+	  
+	  //For Testing
+	  if (choiceAnimal == 1){CurrentAnimal = "bear";}
+	  if (choiceAnimal == 2){CurrentAnimal = "badger";}
+	  if (choiceAnimal == 3){CurrentAnimal = "pigeon";}
+	  
     }
 
     public void WhichAnimal(bool newSwitch){

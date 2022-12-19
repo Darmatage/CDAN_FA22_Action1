@@ -12,9 +12,9 @@ public class PlayerHurt: MonoBehaviour{
            rb2D = transform.GetComponent<Rigidbody2D>();
       }
 
-void Update(){
-  anim = gameObject.GetComponent<PlayerAnimal>().currentAnim;
-}
+	void Update(){
+		anim = gameObject.GetComponent<PlayerAnimal>().currentAnim;
+	}
 
       public void playerHit(){
             anim.SetTrigger ("hurt");

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour {
 
-    //public Animator anim;
+    public Animator anim;
     public Rigidbody2D rb;
     public float jumpForce = 20f;
     public Transform feet;
@@ -18,17 +18,17 @@ public class PlayerJump : MonoBehaviour {
 
 	//bool isBird = false;
 	bool canFly = false;
-  public static bool flyEnergyEnough = true;
+	public static bool flyEnergyEnough = true;
 	public float groundPos = 0;
 
 
     void Start(){
-            //anim = gameObject.GetComponent<PlayerAnimal>().curentAnim;
+            anim = gameObject.GetComponent<PlayerAnimal>().currentAnim;
             rb = GetComponent<Rigidbody2D>();
     }
 
     void Update() {
-        //anim = gameObject.GetComponent<PlayerAnimal>().curentAnim;
+        anim = gameObject.GetComponent<PlayerAnimal>().currentAnim;
         if (GameHandler.currentBeast=="bear"){
             canJump = false;
 			canFly = false;
@@ -70,7 +70,7 @@ public class PlayerJump : MonoBehaviour {
     public void Jump() {
         jumpTimes += 1;
         rb.velocity = Vector2.up * jumpForce;
-        // anim.SetTrigger("Jump");
+         anim.SetTrigger("Jump");
         // JumpSFX.Play();
 
         //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);

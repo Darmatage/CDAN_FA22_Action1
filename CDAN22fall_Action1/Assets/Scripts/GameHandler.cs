@@ -148,7 +148,7 @@ public class GameHandler : MonoBehaviour {
             healthTextTemp.text = "" + playerHealth;
 
             Text tokensTextTemp = tokensText.GetComponent<Text>();
-            tokensTextTemp.text = "GOLD: " + gotTokens;
+            tokensTextTemp.text = "STARDUST: " + gotTokens;
 	}
 
       public void playerDies(){
@@ -164,12 +164,14 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void StartGame() {
+			Resume();
             SceneManager.LoadScene("Tutorial");
       }
 
       public void RestartGame() {
+			Resume();
+			playerHealth = StartPlayerHealth;
             SceneManager.LoadScene("MainMenu");
-            playerHealth = StartPlayerHealth;
       }
 
       public void QuitGame() {
@@ -181,24 +183,31 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void Credits() {
+			Resume();
             SceneManager.LoadScene("Credits");
       }
 			public void LevelSelect() {
+			Resume();
             SceneManager.LoadScene("LevelSelect");
       }
 			public void Level1() {
+			Resume();
             SceneManager.LoadScene("Tutorial");
       }
 			public void Level2() {
+			Resume();
             SceneManager.LoadScene("PigeonLevel");
       }
 			public void Level3() {
+			Resume();
             SceneManager.LoadScene("MountainLevel");
       }
 			public void Level4() {
+			Resume();
             SceneManager.LoadScene("Challenge");
       }
 			public void Level5() {
+			Resume();
             SceneManager.LoadScene("LastLevel");
       }
 }

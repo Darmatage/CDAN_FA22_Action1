@@ -6,13 +6,13 @@ public class PlayerProjectile : MonoBehaviour{
 
       public int damage = 1;
       public GameObject hitEffectAnim;
-      public float SelfDestructTime = 2.0f;
-	  public float SelfDestructVFX = 1f;
+      public float SelfDestructTime = 4.0f;
+	  public float SelfDestructVFX = 0.5f;
       public SpriteRenderer projectileArt;
 
       void Start(){
            projectileArt = GetComponentInChildren<SpriteRenderer>();
-		   //selfDestruct();
+		   selfDestruct();
       }
 
       //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
@@ -24,6 +24,7 @@ public class PlayerProjectile : MonoBehaviour{
            if ((other.gameObject.tag != "Player")||(other.gameObject.transform.parent.tag != "Player")) {
                   GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
                   projectileArt.enabled = false;
+				  //projectileArt.gameObject.SetActive(false);
                   //Destroy (animEffect, 0.5);
                   StartCoroutine(selfDestructHit(animEffect));
             }
