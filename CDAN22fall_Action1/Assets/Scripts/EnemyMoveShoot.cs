@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMoveShoot : MonoBehaviour {
 
-      //public Animator anim;
+    public Animator anim;
        public float speed = 2f;
        public float stoppingDistance = 4f; // when enemy stops moving towards player
        public float retreatDistance = 3f; // when enemy moves away from approaching player
@@ -35,7 +35,7 @@ public class EnemyMoveShoot : MonoBehaviour {
               timeBtwShots = startTimeBtwShots;
 
               rend = GetComponentInChildren<Renderer> ();
-              //anim = GetComponentInChildren<Animator> ();
+              anim = GetComponentInChildren<Animator> ();
 
               //if (GameObject.FindWithTag ("GameHandler") != null) {
               // gameHander = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
@@ -49,7 +49,7 @@ public class EnemyMoveShoot : MonoBehaviour {
                      if (Vector2.Distance (transform.position, player.position) > stoppingDistance) {
                             transform.position = Vector2.MoveTowards (transform.position, player.position, speed * Time.deltaTime);
                             if (isAttacking == false) {
-                                   //anim.SetBool("Walk", true);
+                                   anim.SetBool("walk", true);
                             }
                             //Vector2 lookDir = PlayerVect - rb.position;
                             //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg -90f;
@@ -58,14 +58,14 @@ public class EnemyMoveShoot : MonoBehaviour {
                      // stop moving
                      else if (Vector2.Distance (transform.position, player.position) < stoppingDistance && Vector2.Distance (transform.position, player.position) > retreatDistance) {
                             transform.position = this.transform.position;
-                            //anim.SetBool("Walk", false);
+                            anim.SetBool("walk", false);
                      }
 
                      // retreat from player
                      else if (Vector2.Distance (transform.position, player.position) < retreatDistance) {
                             transform.position = Vector2.MoveTowards (transform.position, player.position, -speed * Time.deltaTime);
                             if (isAttacking == false) {
-                                   //anim.SetBool("Walk", true);
+                                   anim.SetBool("walk", true);
                             }
                      }
 
@@ -74,17 +74,19 @@ public class EnemyMoveShoot : MonoBehaviour {
                             gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
                     } else {
                              gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
-                     }
+                    }
 
                      //Timer for shooting projectiles
                      if (timeBtwShots <= 0) {
                             isAttacking = true;
-                            //anim.SetTrigger("Attack");
+                            anim.SetBool("attack", true);
+							anim.SetBool("walk", false);
                             Instantiate (projectile, transform.position, Quaternion.identity);
                             timeBtwShots = startTimeBtwShots;
                      } else {
                             timeBtwShots -= Time.deltaTime;
                             isAttacking = false;
+							anim.SetBool("attack", false);
                      }
               }
        }
