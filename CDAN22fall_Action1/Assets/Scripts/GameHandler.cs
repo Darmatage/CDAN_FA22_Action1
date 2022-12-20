@@ -197,17 +197,21 @@ public class GameHandler : MonoBehaviour {
 			public void Level2() {
 			Resume();
             SceneManager.LoadScene("PigeonLevel");
+			GameHandler.gotTokens += 10;
       }
 			public void Level3() {
 			Resume();
             SceneManager.LoadScene("MountainLevel");
+			GameHandler.gotTokens += 20;
       }
 			public void Level4() {
 			Resume();
             SceneManager.LoadScene("Challenge");
+			GameHandler.gotTokens += 30;
       }
 			public void Level5() {
 			Resume();
             SceneManager.LoadScene("LastLevel");
+			GameHandler.gotTokens += 40;
       }
 }
