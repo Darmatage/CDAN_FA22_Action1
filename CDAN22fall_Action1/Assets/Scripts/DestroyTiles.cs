@@ -10,7 +10,9 @@ public class DestroyTiles : MonoBehaviour{
 	private List<Vector3> tileWorldLocations;
 	public float rangeDestroy = 1f;
 	public bool canExplode = true;
+	//FX
 	public GameObject digFX;
+	public AudioSource digSFX; 
 
 	void Awake(){
 		TileMapInit();
@@ -22,7 +24,13 @@ public class DestroyTiles : MonoBehaviour{
 		if ((Input.GetAxis("Attack") > 0) && (canExplode == true) &&(GameHandler.currentBeast == "badger")){
 			destroyTileArea();
 			anim.SetBool ("dig", true);
-		} else {anim.SetBool ("dig", false);}
+			if (!digSFX.isPlaying){
+				digSFX.Play();
+				}
+		} else {
+			anim.SetBool ("dig", false);
+			digSFX.Stop();
+		}
 	}
 
 	void TileMapInit(){
