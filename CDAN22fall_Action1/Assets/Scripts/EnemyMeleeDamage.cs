@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMeleeDamage : MonoBehaviour {
        private Renderer rend;
-       //public Animator anim;
+       public Animator anim;
        public GameObject healthLoot;
        public int maxHealth = 100;
        public int currentHealth;
@@ -14,7 +14,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
 
        void Start(){
               rend = GetComponentInChildren<Renderer> ();
-              //anim = GetComponentInChildren<Animator> ();
+              anim = GetComponentInChildren<Animator> ();
               currentHealth = maxHealth;
        }
 
@@ -23,7 +23,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
 			currentHealth -= damage;
 			//rend.material.color = new Color(2.4f, 0.9f, 0.9f, 1f);
 			//StartCoroutine(ResetColor());
-			//anim.SetTrigger ("Hurt");
+			anim.SetTrigger ("hurt");
 			if (currentHealth <= 0){
 				Die();
 			}
@@ -48,7 +48,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
 
        void Die(){
               Instantiate (healthLoot, transform.position, Quaternion.identity);
-              //anim.SetBool ("isDead", true);
+              anim.SetBool ("KO", true);
               GetComponent<Collider2D>().enabled = false;
               StartCoroutine(Death());
        }
