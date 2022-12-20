@@ -619,6 +619,7 @@ MonoBehaviour:
   rangeDestroy: 1
   canExplode: 1
   digFX: {fileID: 0}
+  digSFX: {fileID: 0}
 --- !u!1 &483726627
 GameObject:
   m_ObjectHideFlags: 0
@@ -149196,6 +149197,26 @@ PrefabInstance:
     - target: {fileID: 6170184383978422171, guid: 493ba49a45a264907ae93929881051ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381594690650117854, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2cbdf579afcbf41c584d7965a13fbf04, type: 3}
+    - target: {fileID: 7381594690650117855, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 119.9796
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381594690650117855, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 119.9796
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381594690650117855, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000054359436
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381594690650117855, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000023841858
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 493ba49a45a264907ae93929881051ee, type: 3}
