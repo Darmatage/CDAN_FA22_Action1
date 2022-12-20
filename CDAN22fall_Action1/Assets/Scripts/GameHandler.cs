@@ -36,6 +36,8 @@ public class GameHandler : MonoBehaviour {
 	public static float volumeLevel = 1.0f;
 	private Slider sliderVolumeCtrl;
 
+	private string sceneName;
+
         void Awake (){
                 SetLevel (volumeLevel);
                 GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
@@ -72,8 +74,6 @@ public class GameHandler : MonoBehaviour {
                 mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
                 volumeLevel = sliderValue;
         }
-
-      private string sceneName;
 
       void Start(){
             player = GameObject.FindWithTag("Player");
@@ -165,6 +165,7 @@ public class GameHandler : MonoBehaviour {
 
       public void StartGame() {
 			Resume();
+			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
             SceneManager.LoadScene("Tutorial");
       }
 
@@ -192,26 +193,31 @@ public class GameHandler : MonoBehaviour {
       }
 			public void Level1() {
 			Resume();
-            SceneManager.LoadScene("Tutorial");
+			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
+			SceneManager.LoadScene("Tutorial");
       }
 			public void Level2() {
 			Resume();
-            SceneManager.LoadScene("PigeonLevel");
 			GameHandler.gotTokens += 10;
+			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
+			SceneManager.LoadScene("PigeonLevel");
       }
 			public void Level3() {
 			Resume();
-            SceneManager.LoadScene("MountainLevel");
 			GameHandler.gotTokens += 20;
+			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
+            SceneManager.LoadScene("MountainLevel");
       }
 			public void Level4() {
 			Resume();
-            SceneManager.LoadScene("Challenge");
 			GameHandler.gotTokens += 30;
+			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
+	        SceneManager.LoadScene("Challenge");
       }
 			public void Level5() {
 			Resume();
-            SceneManager.LoadScene("LastLevel");
 			GameHandler.gotTokens += 40;
+			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
+			SceneManager.LoadScene("LastLevel");
       }
 }

@@ -33,6 +33,7 @@ public class PlayerJump : MonoBehaviour {
             canJump = false;
 			canFly = false;
 		}
+		
 		if (GameHandler.currentBeast=="badger"){
 			//if ((IsGrounded()) || (jumpTimes <= 1)){
 			if (IsGrounded()){
@@ -42,19 +43,18 @@ public class PlayerJump : MonoBehaviour {
 			else {
 				canJump = false;
 			}
+		} else {canJump = false;}
 
-		}
 
-		if (GameHandler.currentBeast=="pigeon"){
-			//if ((IsGrounded()) || (jumpTimes <= 1)){
-			//if ((IsGrounded())&&(flyEnergyEnough)){
-      if (flyEnergyEnough){
+		if (GameHandler.currentBeast == "pigeon"){
+			if (flyEnergyEnough){
 				canFly = true;
 			}
 			else{
-				canFly = false; // remove this, to fly more?
+				canFly = false;
 			}
-		}
+		} else {canFly = false;}
+
 
 		if ((Input.GetButtonDown("Jump")) && (canJump) && (isAlive == true)) {
 			Jump();
@@ -70,7 +70,7 @@ public class PlayerJump : MonoBehaviour {
     public void Jump() {
         jumpTimes += 1;
         rb.velocity = Vector2.up * jumpForce;
-         anim.SetTrigger("Jump");
+         anim.SetTrigger("jump");
         // JumpSFX.Play();
 
         //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
@@ -80,7 +80,7 @@ public class PlayerJump : MonoBehaviour {
 	public void Fly(){
     rb.velocity = Vector2.up * (jumpForce/2);
     //rb.velocity = Vector2.up * (jumpForce/2);
-    StopCoroutine(BirdDrop());
+		StopCoroutine(BirdDrop());
 		StartCoroutine(BirdDrop());
 	}
 
