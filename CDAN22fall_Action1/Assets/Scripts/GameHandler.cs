@@ -216,8 +216,17 @@ public class GameHandler : MonoBehaviour {
       }
 			public void Level5() {
 			Resume();
+			resetStats();
 			GameHandler.gotTokens += 40;
 			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
 			SceneManager.LoadScene("LastLevel");
       }
+	  
+	  
+	  public void resetStats(){
+		  gotTokens = 0;
+		  Lives = 5;
+		  playerHealth = 100;
+	  }
+	  
 }
