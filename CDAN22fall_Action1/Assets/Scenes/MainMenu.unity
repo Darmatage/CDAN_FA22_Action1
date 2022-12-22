@@ -768,7 +768,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
     m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
@@ -932,7 +932,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
     m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
@@ -1335,7 +1335,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
     m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
@@ -1713,7 +1713,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
     m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
@@ -1989,8 +1989,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -235}
-  m_SizeDelta: {x: 1000, y: 200}
+  m_AnchoredPosition: {x: 0, y: -241.73111}
+  m_SizeDelta: {x: 1000, y: 183.8453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108185973
 MonoBehaviour:
@@ -2013,11 +2013,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2025,8 +2025,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Cursed to wander the realms as three\n beasts, can you find your way back
-    \nto your human form?"
+  m_Text: 'Waking up with paws instead of hands is never good...
+
+    Well, you''d
+    better get exploring, or you''re *never* getting back to normal.'
 --- !u!222 &2108185974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2099,6 +2101,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1338517816}
     m_Modifications:
+    - target: {fileID: 2735703963223237838, guid: 504c5881c9b35462c9ae0aa1c682c823, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
     - target: {fileID: 2735703963320198594, guid: 504c5881c9b35462c9ae0aa1c682c823, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -2239,6 +2245,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2735703963598914836, guid: 504c5881c9b35462c9ae0aa1c682c823, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
+    - target: {fileID: 2735703963616684558, guid: 504c5881c9b35462c9ae0aa1c682c823, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
     - target: {fileID: 2735703963643305055, guid: 504c5881c9b35462c9ae0aa1c682c823, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2295,6 +2309,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2735703964553927510, guid: 504c5881c9b35462c9ae0aa1c682c823, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
     - target: {fileID: 2735703964856727311, guid: 504c5881c9b35462c9ae0aa1c682c823, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2323,5 +2341,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2735703964871261634, guid: 504c5881c9b35462c9ae0aa1c682c823, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 504c5881c9b35462c9ae0aa1c682c823, type: 3}
