@@ -61,7 +61,8 @@ public class DestroyTiles : MonoBehaviour{
 	}
 
 	IEnumerator BoomVFX(Vector3 tilePos){
-		GameObject tempVFX = Instantiate(digFX, tilePos, Quaternion.identity);
+		Vector3 tilePosShift = new Vector3(tilePos.x, tilePos.y, -0.05f);
+		GameObject tempVFX = Instantiate(digFX, tilePosShift, Quaternion.identity);
 		yield return new WaitForSeconds(1f);
 		Destroy(tempVFX);
 	}

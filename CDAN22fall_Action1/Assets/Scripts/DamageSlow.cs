@@ -27,6 +27,7 @@ public class DamageSlow : MonoBehaviour {
        }
 
        void OnTriggerStay2D(Collider2D other){
+		   Debug.Log("Ouch. Lava!");
               if (other.gameObject.transform.parent.tag == "Player") {
                      isDamaging = true;
               }
