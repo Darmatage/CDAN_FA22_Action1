@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2121186767976306262}
   - component: {fileID: 7591196390492724256}
   - component: {fileID: 3134136969572799808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Shooter
   m_TagString: enemyShooter
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   healthLoot: {fileID: 4774579788167191143, guid: d0f182548f9147745b8e0b96d073f3ea, type: 3}
-  maxHealth: 100
+  maxHealth: 40
   currentHealth: 0
   knockBackForce: 40
 --- !u!1 &8758662262048497804

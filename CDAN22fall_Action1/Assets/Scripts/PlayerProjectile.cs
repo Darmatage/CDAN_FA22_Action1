@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour{
 
-      public int damage = 1;
+      public int damage = 10;
       public GameObject hitEffectAnim;
       public float SelfDestructTime = 4.0f;
 	  public float SelfDestructVFX = 0.5f;
