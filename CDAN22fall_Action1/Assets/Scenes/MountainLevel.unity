@@ -149151,6 +149151,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1430859226522191132, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
+    - target: {fileID: 1430859226522191132, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6170184383978422164, guid: 493ba49a45a264907ae93929881051ee, type: 3}
       propertyPath: m_Name
       value: GameHandlerCanvas
@@ -149203,10 +149211,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6170184384714866100, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
+    - target: {fileID: 6170184385195155270, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
     - target: {fileID: 7381594690650117854, guid: 493ba49a45a264907ae93929881051ee, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2cbdf579afcbf41c584d7965a13fbf04, type: 3}
+    - target: {fileID: 7381594690650117855, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381594690650117855, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452293294448718864, guid: 493ba49a45a264907ae93929881051ee, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3b904e0ebd05d4bcd89bf4d0f7180c68, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 493ba49a45a264907ae93929881051ee, type: 3}
 --- !u!1 &1062147016
