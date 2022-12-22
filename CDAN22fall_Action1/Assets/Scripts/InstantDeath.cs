@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InstantDeath : MonoBehaviour {
 
-       public GameHandler gameHandlerObj;
-       public int damage = 5;
+       private GameHandler gameHandlerObj;
+       private int damage = 100;
        //public Transform backToStart; //uncomment this line for "auto-death," to zap the Player back to start
 
        void Start(){
