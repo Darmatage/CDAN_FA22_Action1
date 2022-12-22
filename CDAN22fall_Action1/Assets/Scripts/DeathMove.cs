@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class DeathMove : MonoBehaviour { 
+public class DeathMove : MonoBehaviour {
 
        private float speed = 2f;
        private bool moveToA = true;
@@ -29,17 +29,17 @@ public class DeathMove : MonoBehaviour {
               else if (Vector3.Distance(moveTargetB.position, transform.position) < 1){ moveToA = true; turn();}
        }
 
-       void OnCollisionEnter2D(Collision2D other){
-              if (other.gameObject.tag == "Player"){
-                     other.collider.transform.SetParent(transform);        // so Player moves with platform
-              }
-       }
+       //void OnCollisionEnter2D(Collision2D other){
+              //if (other.gameObject.tag == "Player"){
+                     //other.collider.transform.SetParent(transform);        // so Player moves with platform
+              //}
+       //}
 
-       void OnCollisionExit2D(Collision2D other){
-              if (other.gameObject.tag == "Player"){
-                     other.collider.transform.SetParent(null);        // Player not parented when off platform
-              }
-       }
+       //void OnCollisionExit2D(Collision2D other){
+              //if (other.gameObject.tag == "Player"){
+                     //other.collider.transform.SetParent(null);        // Player not parented when off platform
+              //}
+       //}
 
        void turn(){
               if (isHorizontal){
