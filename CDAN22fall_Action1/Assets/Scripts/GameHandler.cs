@@ -165,12 +165,14 @@ public class GameHandler : MonoBehaviour {
 
       public void StartGame() {
 			Resume();
+			resetStats();
 			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
             SceneManager.LoadScene("Tutorial");
       }
 
       public void RestartGame() {
 			Resume();
+			resetStats();
 			playerHealth = StartPlayerHealth;
             SceneManager.LoadScene("MainMenu");
       }
@@ -189,27 +191,32 @@ public class GameHandler : MonoBehaviour {
       }
 			public void LevelSelect() {
 			Resume();
+			resetStats();
             SceneManager.LoadScene("LevelSelect");
       }
 			public void Level1() {
 			Resume();
+			resetStats();
 			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
 			SceneManager.LoadScene("Tutorial");
       }
 			public void Level2() {
 			Resume();
+			resetStats();
 			GameHandler.gotTokens += 10;
 			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
 			SceneManager.LoadScene("PigeonLevel");
       }
 			public void Level3() {
 			Resume();
+			resetStats();
 			GameHandler.gotTokens += 20;
 			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
             SceneManager.LoadScene("MountainLevel");
       }
 			public void Level4() {
 			Resume();
+			resetStats();
 			GameHandler.gotTokens += 30;
 			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
 	        SceneManager.LoadScene("Challenge");
@@ -221,12 +228,12 @@ public class GameHandler : MonoBehaviour {
 			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
 			SceneManager.LoadScene("LastLevel");
       }
-	  
-	  
+
+
 	  public void resetStats(){
 		  gotTokens = 0;
 		  Lives = 5;
 		  playerHealth = 100;
 	  }
-	  
+
 }
