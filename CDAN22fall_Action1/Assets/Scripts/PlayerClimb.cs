@@ -32,21 +32,26 @@ public class PlayerClimb : MonoBehaviour {
 			//if ((IsGrounded()) || (jumpTimes <= 1)){
 			if (IsClimeable()){
 				canClimb = true;
+				anim.SetBool("climb",true);
+				anim.SetBool("walk",false);
 			}
 			//else if (jumpTimes >= 1){
 			else {
 				canClimb = false;
+				anim.SetBool("climb",false);
 			}
-		} else {canClimb = false;}
+		} else {canClimb = false;
+			anim.SetBool("climb",false);
+		}
 
 
 
     if ((Input.GetButtonDown("Jump")) && (canClimb) && (isAlive == true)) {
       Climb();
-      anim.SetBool("climb",true);
+      
     }
     else{
-      anim.SetBool("climb",false);
+      //anim.SetBool("climb",false);
     }
 
     }
