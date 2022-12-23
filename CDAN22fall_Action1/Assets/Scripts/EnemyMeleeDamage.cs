@@ -9,7 +9,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
        public int maxHealth = 100;
        public int currentHealth;
 
-	public float knockBackForce = 40f; 
+	private float knockBackForce = 15f; 
 
 
        void Start(){
@@ -34,7 +34,8 @@ public class EnemyMeleeDamage : MonoBehaviour {
 		
 		Rigidbody2D pushRB = gameObject.GetComponent<Rigidbody2D>();
 		Vector2 moveDirectionPush = pushRB.transform.position - playerPos;
-		pushRB.AddForce(moveDirectionPush.normalized * knockBackForce * - 1f, ForceMode2D.Impulse);
+		//pushRB.AddForce(moveDirectionPush.normalized * knockBackForce * - 1f, ForceMode2D.Impulse);
+		pushRB.AddForce(moveDirectionPush.normalized * knockBackForce, ForceMode2D.Impulse);
 		StartCoroutine(EndKnockBack(pushRB)); 
 		
 		

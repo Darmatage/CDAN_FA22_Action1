@@ -13,7 +13,7 @@ public class PlayerJump : MonoBehaviour {
     public bool canJump = false;
     public int jumpTimes = 0;
     public bool isAlive = true;
-    //public AudioSource JumpSFX;
+    public AudioSource JumpSFX;
 	public float feetRange = 1f;
 
 	//bool isBird = false;
@@ -21,6 +21,10 @@ public class PlayerJump : MonoBehaviour {
 	public static bool flyEnergyEnough = true;
 	public float groundPos = 0;
 
+	public AudioSource flySFX1;
+	public AudioSource flySFX2;
+	public AudioSource flySFX3;
+	private AudioSource flySFX;
 
     void Start(){
             anim = gameObject.GetComponent<PlayerAnimal>().currentAnim;
@@ -71,7 +75,7 @@ public class PlayerJump : MonoBehaviour {
         jumpTimes += 1;
         rb.velocity = Vector2.up * jumpForce;
          anim.SetTrigger("jump");
-        // JumpSFX.Play();
+        JumpSFX.Play();
 
         //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
         //rb.velocity = movement;
@@ -80,6 +84,17 @@ public class PlayerJump : MonoBehaviour {
 	public void Fly(){
     rb.velocity = Vector2.up * (jumpForce/2);
     //rb.velocity = Vector2.up * (jumpForce/2);
+	
+		int flyNum = Random.Range(0,3);
+		if (flyNum==0){flySFX = flySFX1;} 
+		else if (flyNum==1){flySFX = flySFX2;} 
+		else if (flyNum==2){flySFX = flySFX3;} 
+		else {flySFX = flySFX1;} 
+	
+		if (!flySFX.isPlaying){
+			flySFX.Play();
+		}
+	
 		StopCoroutine(BirdDrop());
 		StartCoroutine(BirdDrop());
 	}
@@ -106,7 +121,7 @@ public class PlayerJump : MonoBehaviour {
 			groundPos = feet.position.y;
 		}
 		if ((groundCheck != null) || (enemyCheck != null)) {
-            //Debug.Log("I am trouching ground!");
+            //Debug.Log("I am touching ground!");
             jumpTimes = 0;
             return true;
         }

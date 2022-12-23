@@ -33,8 +33,11 @@ public class GameHandler : MonoBehaviour {
 	public static bool GameisPaused = false;
 	public GameObject pauseMenuUI;
 	public AudioMixer mixer;
-	public static float volumeLevel = 1.0f;
+	public static float volumeLevel = 0.6f;
 	private Slider sliderVolumeCtrl;
+	public AudioMixer mixerSFX;
+	public static float volumeLevelSFX = 1.0f;
+	private Slider sliderVolumeCtrlSFX;
 
 	private string sceneName;
 
@@ -45,6 +48,15 @@ public class GameHandler : MonoBehaviour {
                         sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
                         sliderVolumeCtrl.value = volumeLevel;
                 }
+				
+				SetLevelSFX (volumeLevelSFX);
+                GameObject sliderTemp2 = GameObject.FindWithTag("PauseMenuSliderSFX");
+                if (sliderTemp2 != null){
+                        sliderVolumeCtrlSFX = sliderTemp2.GetComponent<Slider>();
+                        sliderVolumeCtrlSFX.value = volumeLevelSFX;
+                }
+				
+				
         }
 
         void Update (){
@@ -73,6 +85,11 @@ public class GameHandler : MonoBehaviour {
         public void SetLevel (float sliderValue){
                 mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
                 volumeLevel = sliderValue;
+        }
+
+        public void SetLevelSFX (float sliderValueSFX){
+                mixer.SetFloat("SFXVolume", Mathf.Log10 (sliderValueSFX) * 20);
+                volumeLevelSFX = sliderValueSFX;
         }
 
       void Start(){
