@@ -205,14 +205,14 @@ public class GameHandler : MonoBehaviour {
 			resetStats();
 			GameHandler.gotTokens += 10;
 			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
-			SceneManager.LoadScene("PigeonLevel");
+			SceneManager.LoadScene("MountainLevel");
       }
 			public void Level3() {
 			Resume();
 			resetStats();
 			GameHandler.gotTokens += 20;
 			BGSoundScript.Instance.gameObject.GetComponent<AudioSource>().Pause();
-            SceneManager.LoadScene("MountainLevel");
+            SceneManager.LoadScene("PigeonLevel");
       }
 			public void Level4() {
 			Resume();
