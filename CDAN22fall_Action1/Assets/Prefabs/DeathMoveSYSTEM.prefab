@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 533912965079707825}
   - component: {fileID: 533912965079707826}
   - component: {fileID: 533912965079707831}
-  - component: {fileID: 361437942442912342}
+  - component: {fileID: 4695047530099100558}
   m_Layer: 0
   m_Name: DeathMoving
   m_TagString: Untagged
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveTargetA: {fileID: 533912965520221806}
   moveTargetB: {fileID: 533912965665093441}
---- !u!114 &361437942442912342
+--- !u!114 &4695047530099100558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,9 +140,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 533912965079707827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819ea30ee6b2e42e5a0a31c130fdca65, type: 3}
+  m_Script: {fileID: 11500000, guid: bdc62f7f3d7064286b769d5a542b2e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameHandlerObj: {fileID: 0}
+  damage: 25
 --- !u!1 &533912965520221807
 GameObject:
   m_ObjectHideFlags: 0
