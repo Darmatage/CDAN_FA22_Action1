@@ -8,7 +8,7 @@ public class PlayerAnimal : MonoBehaviour{
     public GameObject charBadger;
     public GameObject charBear;
     public Animator currentAnim;
-    private int choiceAnimal;
+    public int choiceAnimal;
 
 	//For Testing
 	public string CurrentAnimal; 

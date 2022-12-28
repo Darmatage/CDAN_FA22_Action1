@@ -106,7 +106,9 @@ public class PlayerMove : MonoBehaviour {
 						}
 					}else {
 						anim.SetBool ("walk", false); 
-						anim.SetBool ("fly", true);}
+						anim.SetBool ("fly", true);
+						WalkSFX.Stop();
+						}
 				} else {
 					anim.SetBool ("walk", false);
 					anim.SetBool ("fly", false);
