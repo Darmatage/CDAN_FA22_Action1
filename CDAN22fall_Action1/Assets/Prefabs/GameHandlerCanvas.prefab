@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1892,7 +1892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2338,7 +2338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2714,6 +2714,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8521133737793185902, guid: e1829c7351cda4c5cad73a67027b0030, type: 3}
   m_PrefabInstance: {fileID: 2764305861651663945}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4580762624652714738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5773030288146129959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8f402dcdc995d4fb63d110d92d8998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bearButton: {fileID: 2485288227722792879}
+  badgerButton: {fileID: 8483299356372757761}
+  pigeonButton: {fileID: 7614448968828077524}
+  bearBack: {fileID: 1726884630984878757}
+  badgerBack: {fileID: 8460658320614256498}
+  pigeonBack: {fileID: 860286317639322234}
+  showBadger: 1
+  showPigeon: 1
 --- !u!114 &6702067073744587805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2750,24 +2770,6 @@ MonoBehaviour:
   dialogue: []
   counter: 0
   dialogueLength: 0
---- !u!114 &4580762624652714738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5773030288146129959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d8f402dcdc995d4fb63d110d92d8998, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bearButton: {fileID: 2485288227722792879}
-  badgerButton: {fileID: 8483299356372757761}
-  pigeonButton: {fileID: 7614448968828077524}
-  bearBack: {fileID: 1726884630984878757}
-  badgerBack: {fileID: 8460658320614256498}
-  pigeonBack: {fileID: 860286317639322234}
 --- !u!114 &9019076128248657452 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6590728320930839141, guid: e1829c7351cda4c5cad73a67027b0030, type: 3}
